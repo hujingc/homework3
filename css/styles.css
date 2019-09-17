@@ -1,0 +1,20 @@
+html {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    size: 2em;
+    line-height: 1.5;
+    color: #c12258;
+}
+
+p {
+    color: black;
+    size: 18px;
+    padding-top: 15px;
+}
+
+a {
+    size: 18px;
+    color: c12258;
+}
