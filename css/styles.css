@@ -1,62 +1,121 @@
+/* 1: All files and folders present, HTML body not changed, CSS stylesheet in proper format
+ 2-1: Quicksand font
+ 2-3: All non-header text should be “black”, 18px, with 15px of padding on the top only*/
 html {
     font-family: 'Quicksand', sans-serif;
+    padding-top: 15px;
+    color: black;
+    font-size: 18px;
 }
 
+/* 3: Background is provided image with light grey fallback*/
 body {
     background-color: #dddddd;
     background-image: url('../images/pidgeon-background.jpg');
     background-repeat: no-repeat;
 }
 
+/* 2-5: Focused elements should have a 1px “red” border */
+body *:focus {
+    border: 1px solid red;
+}
+
+/* 2-2: Header 1 should be 2em, each line should be 1.5 height, and dark red (#c12258) */
 h1 {
-    size: 2em;
+    font-size: 2em;
     line-height: 1.5;
     color: #c12258;
 }
 
-p {
-    color: black;
-    size: 18px;
-    padding-top: 15px;
-}
-
+/* 2-4: Links should be 18px, dark red (#c12258), with an underline */
 a {
     size: 18px;
-    color: c12258;
+    color: #c12258;
     text-decoration: underline;
 }
 
-/* 
-html :focus{
-    border: 1px red;
-} */
-
+/* 4-1: Table has 2px black border */
 table {
     border: 2px solid black;
+    border-radius: 10px;
+    border-spacing: 0;
 }
 
+/* 4-2: Column headers are always at least 150px wide, with 10px of padding. Column header text is white, centered, and uppercase with a dark red background (#7e0830). */
 .colhead {
     min-width: 150px;
     padding: 10px;
     color: white;
     text-align: center;
     vertical-align: middle;
-    background: #7e0830;
     text-transform: uppercase;
-}
-th[scope='row']:hover{
-    background-color: #fab9cf;
-}
-.rowhead{
-    border:2px solid black;
-}
-td {
-    text-align: center;
-    border-bottom: 2px solid black;
+    background: #7e0830;
 }
 
-footer * {
-    background: black;
+/* 4-3: Table cells have centered text with a 2px black border on only one side, and 15px padding on all sides. */
+td {
+    text-align: center;
+    border-top: 2px solid black;
+    padding: 15px;
+}
+
+/* 4-4: Row headers have a 2px black border that matches the rest of the rows. */
+th {
+    border-top: 2px solid black;
+}
+
+/* 4-5:Every even numbered table row has a grey background (#dddddd), every add table row has a transparent background. */
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: transparent;
+}
+
+/* 4-6: Hovering over a row changes the background color to light red (#fab9cf). */
+tr:hover {
+    background-color: #fab9cf;
+}
+
+/* 5: Table should have only exterior rounded corners */
+/* Top left */
+thead, tr{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+thead tr th:first-child {
+    border-top-left-radius: 10px;
+}
+
+/* Top right */
+thead tr th:last-child {
+    border-top-right-radius: 10px;
+}
+/* Bottom left */
+tbody tr:last-child th {
+    border-bottom-left-radius: 10px;
+}
+/* Bottom right */
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* 6-2: Is always located at the bottom of the browser window, no matter how small the page content is. (this may take more than one line of code) */
+footer{
+    position: relative;
+    bottom: 0;
+}
+/* 6-1: Footer has “white” text on a “black” background
+6-3: Footer is always at least 60px tall. */
+footer p{
     color: white;
-    padding:0;
+    background: black;
+
+    text-align: center;
+    vertical-align: middle;
+
+    min-height: 60px;
+
 }
