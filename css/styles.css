@@ -2,6 +2,12 @@ html {
     font-family: 'Quicksand', sans-serif;
 }
 
+body {
+    background-color: #dddddd;
+    background-image: url('../images/pidgeon-background.jpg');
+    background-repeat: no-repeat;
+}
+
 h1 {
     size: 2em;
     line-height: 1.5;
@@ -17,4 +23,40 @@ p {
 a {
     size: 18px;
     color: c12258;
+    text-decoration: underline;
+}
+
+/* 
+html :focus{
+    border: 1px red;
+} */
+
+table {
+    border: 2px solid black;
+}
+
+.colhead {
+    min-width: 150px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    background: #7e0830;
+    text-transform: uppercase;
+}
+th[scope='row']:hover{
+    background-color: #fab9cf;
+}
+.rowhead{
+    border:2px solid black;
+}
+td {
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+footer * {
+    background: black;
+    color: white;
+    padding:0;
 }
