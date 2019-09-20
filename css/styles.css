@@ -1,18 +1,18 @@
 /* 1: All files and folders present, HTML body not changed, CSS stylesheet in proper format
- 2-1: Quicksand font
- 2-3: All non-header text should be “black”, 18px, with 15px of padding on the top only*/
-html {
-    font-family: 'Quicksand', sans-serif;
-    padding-top: 15px;
-    color: black;
-    font-size: 18px;
-}
-
+ 2-1: Quicksand font*/
 /* 3: Background is provided image with light grey fallback*/
 body {
     background-color: #dddddd;
     background-image: url('../images/pidgeon-background.jpg');
     background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif;
+    padding-left: 20px;
+}
+/*  2-3: All non-header text should be “black”, 18px, with 15px of padding on the top only */
+p {
+    padding-top: 15px;
+    color: black;
+    font-size: 18px;
 }
 
 /* 2-5: Focused elements should have a 1px “red” border */
@@ -25,6 +25,7 @@ h1 {
     font-size: 2em;
     line-height: 1.5;
     color: #c12258;
+    padding: 0;
 }
 
 /* 2-4: Links should be 18px, dark red (#c12258), with an underline */
@@ -38,7 +39,9 @@ a {
 table {
     border: 2px solid black;
     border-radius: 10px;
+    border-collapse: separate;
     border-spacing: 0;
+    overflow: hidden;
 }
 
 /* 4-2: Column headers are always at least 150px wide, with 10px of padding. Column header text is white, centered, and uppercase with a dark red background (#7e0830). */
@@ -53,15 +56,18 @@ table {
 }
 
 /* 4-3: Table cells have centered text with a 2px black border on only one side, and 15px padding on all sides. */
-td {
+tbody tr td {
     text-align: center;
+    vertical-align: middle;
     border-top: 2px solid black;
     padding: 15px;
 }
 
 /* 4-4: Row headers have a 2px black border that matches the rest of the rows. */
-th {
+tbody th {
     border-top: 2px solid black;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /* 4-5:Every even numbered table row has a grey background (#dddddd), every add table row has a transparent background. */
@@ -80,7 +86,8 @@ tr:hover {
 
 /* 5: Table should have only exterior rounded corners */
 /* Top left */
-thead, tr{
+thead,
+tr {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -93,29 +100,33 @@ thead tr th:first-child {
 thead tr th:last-child {
     border-top-right-radius: 10px;
 }
+
 /* Bottom left */
 tbody tr:last-child th {
     border-bottom-left-radius: 10px;
 }
+
 /* Bottom right */
 tbody tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
 
 /* 6-2: Is always located at the bottom of the browser window, no matter how small the page content is. (this may take more than one line of code) */
-footer{
-    position: relative;
+footer {
+    position: fixed;
     bottom: 0;
-}
-/* 6-1: Footer has “white” text on a “black” background
-6-3: Footer is always at least 60px tall. */
-footer p{
+    width: 100%;
+    text-align: center;
+    vertical-align: bottom;
+    min-height: 60px;
     color: white;
     background: black;
 
-    text-align: center;
-    vertical-align: middle;
+}
 
-    min-height: 60px;
-
+/* 6-1: Footer has “white” text on a “black” background
+6-3: Footer is always at least 60px tall. */
+footer p
+{
+    color:white;
 }
